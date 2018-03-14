@@ -3,6 +3,8 @@ package com.example.lenovo.classdemo
 /**
  * Created by LENOVO on 14/03/2018.
  */
+
+
 class ConvertNumToWords {
 
     var uni= listOf("Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen")
@@ -45,8 +47,12 @@ class ConvertNumToWords {
 
 
 fun main(args: Array<String>) {
-    val a = ConvertNumToWords()
-    println(a.convert(155234))
+
+    val ob=ConvertNumToWords()
+    println("Enter any number:")
+    val n= readLine()!!
+    println("$ob.convert(n.toInt())")
+
 }
 
 
