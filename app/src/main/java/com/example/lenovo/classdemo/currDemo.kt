@@ -38,9 +38,18 @@ class ConvertNumToWords {
             }
             else -> ""
         }
-
-        return if (i < 100000) convert(i / 1000) + " thousand " + (if (i % 1000 > 0) " " + convert(i % 1000) else "")
-        else convert(i / 100000) + " lakh " + if (i % 100000 > 0) " " + convert(i % 100000) else ""
+        when{
+            i<100000->{
+                return convert(i / 1000) + " thousand " + if (i % 1000 > 0){
+                    " " + convert(i % 1000)
+                } else {
+                    ""
+                }
+            }
+            else -> ""
+        }
+        return if (i < 10000000) convert(i / 100000) + " lakh " + if (i % 100000 > 0) " " + convert(i % 100000) else ""
+        else convert(i / 10000000) + " million " + if (i % 10000000 > 0) " " + convert(i % 10000000) else ""
 
     }
 }
@@ -49,9 +58,10 @@ class ConvertNumToWords {
 fun main(args: Array<String>) {
 
     val ob=ConvertNumToWords()
-    println("Enter any number:")
+    /*println("Enter any number:")
     val n= readLine()!!
-    println("$ob.convert(n.toInt())")
+    println("$ob.convert(n.toInt())")*/
+    println(ob.convert(155234))
 
 }
 
