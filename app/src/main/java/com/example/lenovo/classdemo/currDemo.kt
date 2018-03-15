@@ -49,7 +49,7 @@ class ConvertNumToWords {
             else -> ""
         }
         return if (i < 10000000) convert(i / 100000) + " lakh " + if (i % 100000 > 0) " " + convert(i % 100000) else ""
-        else convert(i / 10000000) + " million " + if (i % 10000000 > 0) " " + convert(i % 10000000) else ""
+        else convert(i / 10000000) + " crore " + if (i % 10000000 > 0) " " + convert(i % 10000000) else ""
 
     }
 }
